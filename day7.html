@@ -1,42 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<title>Gym Membership</title>
+
+<style>
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#ffe2c5, #f7d6b8);
+}
+
+h1{
+  text-align: center;
+  margin-top: 25px;
+}
+
+p{
+  text-align: center;
+  color: gray;
+}
+
+form{
+  width: 800px;
+  margin: 30px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+}
+
+.row{
+  display: flex;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.col{
+  flex: 1;
+}
+
+label{
+  font-weight: bold;
+}
+
+input, select, textarea{
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.options{
+  display: flex;
+  gap: 30px;
+  margin-top: 12px;
+}
+
+.options input{
+  width: auto;
+}
+
+.plans{
+  display: flex;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.plan-card{
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.plan-card input{
+  width: auto;
+}
+
+.plan-card:hover{
+  border-color: red;
+}
+
+.buttons{
+  text-align: center;
+  margin-top: 25px;
+}
+
+input[type="submit"]{
+  width: 180px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="reset"]{
+  width: 180px;
+  background: white;
+  cursor: pointer;
+}
+</style>
 </head>
-<body>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
-</head>
+
 <body>
 
-    <header class="navbar">
+<h1>🏋️ GYM MEMBERSHIP 🏋️</h1>
+<p>Join Now. Get Fit. Stay Healthy.</p>
 
-        <!-- Left: Logo -->
-        <a href="#" class="navbar_logo">ProAzure</a>
+<form>
 
-        <!-- Center: Navigation Links -->
-        <nav aria-label="Primary navigation">
-            <ul class="navbar_links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
+  <div class="row">
+    <div class="col">
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter Your Full Name">
+    </div>
 
-        <!-- Right: CTA Button -->
-        <a href="#" class="navbar_cta">Enroll Now</a>
+    <div class="col">
+      <label>Email</label>
+      <input type="email" placeholder="Enter Your Email">
+    </div>
+  </div>
 
-    </header>
+  <div class="row">
+    <div class="col">
+      <label>Phone Number</label>
+      <input type="number" placeholder="Enter Your Phone Number">
+    </div>
 
-</body>
-</html>
-  </ul>  
+    <div class="col">
+      <label>Age</label>
+      <input type="number" placeholder="Enter Your Age">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label>Gender</label>
+      <div class="options">
+        <label><input type="radio" name="gender"> Male</label>
+        <label><input type="radio" name="gender"> Female</label>
+        <label><input type="radio" name="gender"> Other</label>
+      </div>
+    </div>
+
+    <div class="col">
+      <label>Fitness Goal</label>
+      <select>
+        <option>Select Goal</option>
+        <option>Weight Loss</option>
+        <option>Muscle Gain</option>
+        <option>Strength Training</option>
+        <option>General Fitness</option>
+      </select>
+    </div>
+  </div>
+
+  <label>Membership Plan</label>
+  <div class="plans">
+    <label class="plan-card">
+      <input type="radio" name="plan"> Monthly<br>
+      ₹999 / month
+    </label>
+
+    <label class="plan-card">
+      <input type="radio" name="plan"> Quarterly<br>
+      ₹2499 / 3 months
+    </label>
+
+    <label class="plan-card">
+      <input type="radio" name="plan"> Yearly<br>
+      ₹8999 / year
+    </label>
+  </div>
+
+  <br>
+
+  <label>Workout Time</label>
+  <div class="options">
+    <label><input type="checkbox"> Morning</label>
+    <label><input type="checkbox"> Afternoon</label>
+    <label><input type="checkbox"> Evening</label>
+    <label><input type="checkbox"> Night</label>
+  </div>
+
+  <br>
+
+  <label>Address</label>
+  <textarea rows="4" placeholder="Enter Your Address"></textarea>
+
+  <div class="buttons">
+    <input type="submit" value="CLEAR FORM ">
+    <input type="submit" value="SUBMIT FORM">
+  </div>
+
+</form>
+
 </body>
 </html>
