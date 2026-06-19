@@ -1,21 +1,33 @@
+@import url('https://fonta,googleeapis.com/css2?family:wght@300;400;500;600;700&display=swap');
+:root{
+ --primary:#0056b3;
+ --secondary:#00b4d8;
+ --dark:#0f172a;
+ --light:#f8fafc;
+ --accent:#14b8a6;
+}
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+
 }
 
 body{
     background:#f5faff;
     color:#333;
+    font-family: 'Poppins',sans-serif;
 }
 
 /* Header */
 header{
-    background:linear-gradient(135deg,#0077b6,#00b4d8);
-    color:white;
+    background:linear-gradient(135deg
+    var(--primary),
+    var(--secondary),
+    );
+    color:#0f172a;
     text-align:center;
-    padding:40px 20px;
+    padding: 20px;
 }
 
 header h1{
@@ -26,27 +38,207 @@ header p{
     font-size:18px;
     margin-top:10px;
 }
+/* Why Choose Us Section */
+.hero{
+    position: relative;
+    overflow: hidden;
+    height:80vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url("image/banner.png");
 
-/* Navbar */
-nav{
-    background:#023e8a;
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    border-radius:20px;
+}
+.hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+    top:0;
+    left:0;
+}
+
+.hero-content{
+    position:relative;
+    z-index:1;
+}
+.hero-section {
+    background:linear-gradient(rgba(0,86,179,0.7), rgba(15,23,42,0.8)),url('image/banner.png') no-repeat center center/cover;
+    height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+}
+.hero-content h1{
+    font-size:2.5rem;
+    font-weight: 700;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    opacity: 0.9;
+    font-size:1.2rem;
+    font-weight: 700;
+    text-shadow: 3px 3px 15px rgba(0,0,0,0.5);
+    margin-bottom:25px;
+}
+
+.btn{
+    background:var(--secondary);
+    color:white;
+    padding:15px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+.btn{
+    transition:0.4s;
+}
+
+.btn:hover{
+    background: #ffffff;
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(0,180,216,0.6);
+}
+.stats{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:20px;
+}
+
+.stat-box{
+    background:white;
+    padding:25px;
+    width:250px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.stat-box:hover{
+    transform:translateY(-10px);
+}
+
+.stat-box h2{
+    color:#0077b6;
+    font-size:40px;
+}
+
+.stat-box p{
+    font-size:18px;
+    font-weight:bold;
+}
+.why-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.why-card{
+    width:300px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.why-card:hover{
+    transform:translateY(-10px);
+}
+
+.why-card h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+.cert-container{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    padding:15px;
+    gap:20px;
+}
+
+.cert-card{
+    width:300px;
+    background:white;
+    padding:20px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.cert-card:hover{
+    transform:translateY(-10px);
+}
+
+.cert-card h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+/* Navbar */
+nav{
+    background:rgba(40,123,168);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+    padding:12px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px  rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin:10px 15px;
-    font-weight:bold;
+    position:relative;
     transition:0.3s;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 5px 8px;
+    white-space: nowrap;
+}
+nav a:hover{
+    color:#ffcc00;
 }
 
-nav a:hover{
-    color:#90e0ef;
-    transform:translateY(-2px);
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:6px;
+    background:white;
+    left:0;
+    bottom:-5px;
+    transition:0.4s;
+}
+
+nav a:hover::after{
+    width:100%;
 }
 
 /* Sections */
@@ -59,6 +251,9 @@ section{
     border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
+section{
+    animation: fadeUp 1s ease;
+}
 
 section h2{
     color:#0077b6;
@@ -70,8 +265,36 @@ img{
     width:100%;
     border-radius:10px;
 }
-
 /* Service Cards */
+.service-container {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    padding:50px 20px;
+}
+.service-card{
+    background:#ffffff;
+    padding:30px 20px;
+    border-radius:12px;
+    width:300px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,0.5);
+    transition: transform 0.3s easer, box-shadow 0.3s ease;
+
+    
+}
+
+.service-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(40,123,168,0.15);
+}
+.medical-icon {
+    font-size:42px;
+    color: #00b4d8;
+    margin-bottom: 18px;
+    display:inline-block;
+}
 .card-container{
     display:flex;
     flex-wrap:wrap;
@@ -81,17 +304,18 @@ img{
 
 .card{
     width:300px;
-    background:white;
-    border-radius:15px;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border: radius 20px;
     overflow:hidden;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
+    transition:4s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-15px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.2) ;
 }
-
 .card img{
     height:220px;
     object-fit:cover;
@@ -106,10 +330,28 @@ img{
     padding:0 10px 15px;
 }
 
-/* Doctor Cards */
+
+/* Doctor Animation */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
 .doctor-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
     text-align:center;
-    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+
+    animation:float 3s infinite;
 }
 
 .doctor-card img{
@@ -121,8 +363,11 @@ img{
 }
 
 .doctor-card:hover{
-    transform:scale(1.03);
+    transform:translateY(-10px);
 }
+.doctor-card h3{
+    color: var(--primary);
+    margin-top: 15px;}
 
 /* Gallery */
 .gallery-container{
@@ -140,12 +385,13 @@ img{
 }
 
 .gallery-card:hover{
-    transform:scale(1.05);
+    transform:scale(1.1);
 }
 
 .gallery-card img{
     height:220px;
     object-fit:cover;
+    transition: 0.5s;
 }
 
 .gallery-card p{
@@ -176,7 +422,13 @@ form{
     max-width:600px;
     margin:auto;
 }
-
+.top-bar{
+    background:#e63946;
+    color:white;
+    text-align:center;
+    padding:10px;
+    font-weight:bold;
+}
 input,
 textarea,
 select{
@@ -214,12 +466,28 @@ input[type="submit"]:hover{
 }
 
 /* Footer */
-footer{
-    background:#023e8a;
+.footer-container{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.footer-box{
+    width:300px;
+}
+
+.footer-box h3{
+    margin-bottom:10px;
+}
+
+.footer-box a{
     color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:40px;
+    text-decoration:none;
+}
+
+.footer-box a:hover{
+    color:#90e0ef;
 }
 
 /* Responsive */
@@ -229,7 +497,24 @@ footer{
         flex-direction:column;
         align-items:center;
     }
+nav a{
+    position:relative;
+}
 
+nav a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:3px;
+    background:white;
+    bottom:-5px;
+    left:0;
+    transition:0.4s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
     header h1{
         font-size:30px;
     }
