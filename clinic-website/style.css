@@ -1,9 +1,9 @@
 @import url('https://fonta,googleeapis.com/css2?family:wght@300;400;500;600;700&display=swap');
 :root{
- --primary:#0056b3;
- --secondary:#00b4d8;
- --dark:#0f172a;
- --light:#f8fafc;
+ --primary:#003B8E;
+ --secondary:#00C2CB;
+ --dark:#0F172A;
+ --light:#F8FAfC;
  --accent:#14b8a6;
 }
 *{
@@ -42,10 +42,10 @@ header p{
 .hero{
     position: relative;
     overflow: hidden;
-    height:80vh;
+    height:90vh;
     background:
     linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-    url("image/banner.png");
+    url("image/banner.png") center/cover;
 
     background-size:cover;
     background-position:center;
@@ -61,6 +61,14 @@ header p{
     position:relative;
     overflow:hidden;
 }
+.overlay{
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .hero::before{
     content:"";
@@ -75,6 +83,8 @@ header p{
 .hero-content{
     position:relative;
     z-index:1;
+    text-align: center;
+    color: white;
 }
 .hero-section {
     background:linear-gradient(rgba(0,86,179,0.7), rgba(15,23,42,0.8)),url('image/banner.png') no-repeat center center/cover;
@@ -87,12 +97,34 @@ header p{
     padding: 0 20px;
 }
 .hero-content h1{
+    animation: zoomIn 1.5s ease;
     font-size:2.5rem;
     font-weight: 700;
     margin-bottom:15px;
 }
+@keyframes zoomIn{
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
 .hero-content p{
+    animation: slideup 1.5s ease;
     opacity: 0.9;
     font-size:1.2rem;
     font-weight: 700;
@@ -107,15 +139,13 @@ header p{
     border-radius:30px;
     text-decoration:none;
     font-weight:bold;
-}
-.btn{
-    transition:0.4s;
+    transition:0.4s ;
 }
 
 .btn:hover{
     background: #ffffff;
-    transform:scale(1.05);
-    box-shadow:0 0 20px rgba(0,180,216,0.6);
+    transform:scale(1.08);
+    box-shadow:0 0 205px #00b4d8;
 }
 .stats{
     display:flex;
@@ -135,7 +165,10 @@ header p{
 }
 
 .stat-box:hover{
+    background: var(--primary);
+    color: white;
     transform:translateY(-10px);
+    box-shadow: 0 0 30px rgba(0,180,216,0.6);
 }
 
 .stat-box h2{
@@ -273,6 +306,24 @@ img{
     gap:30px;
     padding:50px 20px;
 }
+.department-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+.department-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.department-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
 .service-card{
     background:#ffffff;
     padding:30px 20px;
@@ -280,14 +331,14 @@ img{
     width:300px;
     text-align:center;
     box-shadow:0 8px 25px rgba(0,0,0,0.5);
-    transition: transform 0.3s easer, box-shadow 0.3s ease;
+    transition: transform 0.5s easer, box-shadow 0.3s ease;
 
     
 }
 
 .service-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 30px rgba(40,123,168,0.15);
+    transform:translateY(-15px) rotateX(10deg);
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
 }
 .medical-icon {
     font-size:42px;
@@ -347,23 +398,28 @@ img{
     background:white;
     padding:25px;
     border-radius:20px;
+    overflow: hidden;
     text-align:center;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.4s;
+    transition:4s;
 
     animation:float 3s infinite;
 }
 
-.doctor-card img{
+.doctor-card img {
     width:250px;
     height:250px;
     border-radius:50%;
     object-fit:cover;
     border:5px solid #00b4d8;
+    transition: 0.5s;
+
 }
 
 .doctor-card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-15px);
+     transform:scale(1.8) rotate(3deg) ;
+
 }
 .doctor-card h3{
     color: var(--primary);
@@ -454,9 +510,50 @@ input[type="submit"]:hover{
 }
 
 /* Testimonials */
-.testimonial{
-    border-left:5px solid #00b4d8;
-    background:#f0fbff;
+
+.testimonials{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.testimonials h2{
+    color:#003B8E;
+    margin-bottom:40px;
+}
+
+.testimonial-container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.testimonial-card{
+    width:300px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+.testimonial-card p{
+    font-style:italic;
+    margin-bottom:15px;
+}
+
+.testimonial-card h4{
+    color:#003B8E;
+}
+
+.testimonial-card span{
+    color:gold;
+    font-size:20px;
 }
 
 /* FAQ */
@@ -475,6 +572,7 @@ input[type="submit"]:hover{
 
 .footer-box{
     width:300px;
+    transition: 0.4s;
 }
 
 .footer-box h3{
@@ -488,6 +586,7 @@ input[type="submit"]:hover{
 
 .footer-box a:hover{
     color:#90e0ef;
+    transform: translateY(-8px);
 }
 
 /* Responsive */
@@ -499,6 +598,7 @@ input[type="submit"]:hover{
     }
 nav a{
     position:relative;
+    color: #00C2CB;
 }
 
 nav a::after{
@@ -506,7 +606,7 @@ nav a::after{
     position:absolute;
     width:0;
     height:3px;
-    background:white;
+    background:#00b4d8;
     bottom:-5px;
     left:0;
     transition:0.4s;
@@ -525,5 +625,49 @@ nav a:hover::after{
 
     section{
         width:95%;
+    }
+}
+.whatsapp-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0);}
+}
+
+.hero img{
+    animation:float 4s ease-in-out infinite;
+}
+body{
+    animation:fadePage 1s ease;
+}
+
+@keyframes fadePage{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
     }
 }
